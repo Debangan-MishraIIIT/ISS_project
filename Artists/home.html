@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        #mainnavcont {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        #mainnav {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            margin: 0;
+            padding: 1vh;
+            z-index: 10;
+        }
+
+        #logo {
+            color: white;
+            font-size: 2.5rem;
+            font-family: 'Delicious Handrawn', cursive;
+            font-weight: bold;
+            padding: 1vh 0 2vh 0;
+            display: flex;
+            justify-content: center;
+            transform: translateX(0.75vw);
+            align-items: center;
+
+        }
+
+        #subnav {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+
+        .navlink {
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+
+        .navlink::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: white;
+            width: 0%;
+            transition: 0.68s;
+            margin: 0px auto;
+        }
+
+        .navlink:hover::after {
+            width: 100%;
+        }
+
+        #hometext{
+            color:rgb(182, 181, 181);
+        }
+        #hometext::after{
+            width: 100%;
+            background-color:rgb(182, 181, 181);
+        }
+
+        .c1 {
+            height: 70vh;
+            width: 95vw;
+            margin: 2vh;
+            display: flex;
+        }
+
+        #mainbod {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #footer {
+            background-color: black;
+            height: 7vh;
+            width: 100vw;
+            position: sticky;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 35vw;
+        }
+
+        .texttop {
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Delicious Handrawn', cursive;
+            font-size: 3em;
+        }
+
+        .items {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .item {
+            background-color: rgb(50, 50, 50);
+            height: 25%;
+            width: 90%;
+            border-radius: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+            display: flex;
+            transition: 0.75s;
+            z-index: 0;
+        }
+        .text{
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            
+        }
+
+        .item:hover {
+            background-color: #626262;
+        }
+        .itemimg{
+            height: 12vh; width: 12vh;
+            background-color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainnavcont">
+        <div id="mainnav">
+            <div id="logo">TuneTrance</div>
+            <ul id="subnav">
+                <li><a href="/home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="#" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="/about.html" class="navlink" id="abouttext">ABOUT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="mainbod">
+        <div class="c1" id="topart">
+            <div class="texttop">
+                Top Artist
+            </div>
+            <div class="items">
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">Taylor Swift</a></div>
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">Drake</a></div>
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">BTS</a></div>
+            </div>
+        </div>
+        <div class="c1" id="topalb">
+            <div class="items" style="padding-left: 5vw;">
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">Scorpion</a></div>
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">Proof</a></div>
+                <div class="item"><div class="itemimg"></div><a href="#" class="text">Reputation</a></div>
+            </div>
+            <div class="texttop">
+                Top Albums
+            </div>
+        </div>
+        <div class="c1" id="topsong">
+            <div class="texttop">
+                Top Songs
+            </div>
+            <div class="items">
+                <div class="item"><div class="itemimg"></div><div class="text">Evermore</div></div>
+                <div class="item"><div class="itemimg"></div><div class="text">Lilac</div></div>
+                <div class="item"><div class="itemimg"></div><div class="text">Wake Up</div></div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Created by Akshat and Debangan</p><a href="/about.html">More About Us</a>
+    </div>
+</body>
+
+</html>
