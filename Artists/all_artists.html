@@ -1,12 +1,114 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slider Sandbox</title>
     <style>
+        body {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-slider {
+            width: 100%;
+            height: 600px;
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+        }
+
+        .slides-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 30px;
+        }
+
+        .img {
+            position: relative;
+            width: 25vh;
+            height: 25vh;
+            transition: 0.5s;
+        }
+
+        .button {
+            position: absolute;
+            width: 25vh;
+            height: 25vh;
+            transition: 0.5s;
+            background-color: rgba(67, 67, 151, 0.2);
+        }
+
+        #slider-span1:target~.image-slider #img1,
+        #slider-span1:target~.image-slider #button-1 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span2:target~.image-slider #img2,
+        #slider-span2:target~.image-slider #button-2 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span3:target~.image-slider #img3,
+        #slider-span3:target~.image-slider #button-3 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span4:target~.image-slider #img4,
+        #slider-span4:target~.image-slider #button-4 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span5:target~.image-slider #img5,
+        #slider-span5:target~.image-slider #button-5 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span4:target~.image-slider {
+            left: -40%;
+        }
+
+        #slider-span5:target~.image-slider {
+            left: -60%;
+        }
+
+        #slider-span1:target~.image-slider {
+            left: 20%;
+        }
+
+        #slider-span2:target~.image-slider {
+            left: 0%;
+        }
+
+        #slider-span3:target~.image-slider {
+            left: -20%;
+        }
         @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
 
         body {
@@ -14,19 +116,27 @@
             padding: 0;
             max-width: 100%;
             overflow-x: hidden;
-            display: flex;
-            justify-content: space-between;
+            overflow-y: hidden;
+            display:flex;
+            justify-content:space-between;
             flex-direction: column;
             height: 100vh;
             width: 100vw;
         }
 
         #mainnavcont {
+            width: 100%;
             position: sticky;
             top: 0;
             z-index: 10;
         }
-
+        #artisttext{
+            color:rgb(182, 181, 181);
+        }
+        #artisttext::after{
+            width: 100%;
+            background-color:rgb(182, 181, 181);
+        }
         #mainnav {
             display: flex;
             flex-direction: column;
@@ -75,16 +185,6 @@
         .navlink:hover::after {
             width: 100%;
         }
-
-        #artisttext {
-            color: rgb(182, 181, 181);
-        }
-
-        #artisttext::after {
-            width: 100%;
-            background-color: rgb(182, 181, 181);
-        }
-
         .c1 {
             height: 70vh;
             width: 95vw;
@@ -113,50 +213,6 @@
             font-family: Arial, Helvetica, sans-serif;
             padding-left: 35vw;
         }
-
-        #mainbod {
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            background-image: url('background2.png');
-            background-size: cover;
-            justify-content: center;
-
-        }
-
-        .item {
-            width: 33vw;
-            margin: 1vh 1%;
-            flex-shrink: 0;
-            height: 32vw;
-            background-color: greenyellow;
-        }
-        .xitem{
-            margin: 1vh;
-        }
-        #container {
-            width: 96vw;
-            height: 35vw;
-            display: flex;
-            scrollbar-width: none;
-            overflow-x: auto;
-        }
-
-        ::-webkit-scrollbar {
-            width: 1px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: gray;
-            border-radius: 20px;
-            border: 3px solid transparent;
-            height: 8px;
-            /* Set the width of the scrollbar thumb */
-        }
     </style>
 </head>
 
@@ -165,36 +221,46 @@
         <div id="mainnav">
             <div id="logo">TuneTrance</div>
             <ul id="subnav">
-                <li><a href="#" class="navlink" id="hometext">HOME</a></li>
-                <li><a href="#" class="navlink" id="artisttext">ARTISTS</a></li>
-                <li><a href="#" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="../home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
             </ul>
         </div>
     </div>
-    <div id="mainbod">
-            <div id="container">
-                <a href="#" class="xitem">
-                    <div class="item" id="artist1"></div>
-                </a>
-                <a href="#" class="xitem">
-                    <div class="item" id="artist2"></div>
-                </a>
-                <a href="#" class="xitem">
-                    <div class="item" id="artist3"></div>
-                </a>
-                <a href="#" class="xitem">
-                    <div class="item" id="artist4"></div>
-                </a>
-                <a href="#" class="xitem">
-                    <div class="item" id="artist5"></div>
-                </a>
+
+    <div class="slide-container">
+        <span class="slider-span" id="slider-span1"></span>
+        <span class="slider-span" id="slider-span2"></span>
+        <span class="slider-span" id="slider-span3"></span>
+        <span class="slider-span" id="slider-span4"></span>
+        <span class="slider-span" id="slider-span5"></span>
+
+        <div class="image-slider">
+            <div class="slides-div" id="slide-1">
+                <img src="images/headset.jpg" alt="" class="img" id="img1">
+                <a href="#slider-span1" class="button" id="button-1"></a>
             </div>
+            <div class="slides-div" id="slide-2">
+                <img src="images/headset.jpg" alt="" class="img" id="img2">
+                <a href="#slider-span2" class="button" id="button-2"></a>
+            </div>
+            <div class="slides-div" id="slide-3">
+                <img src="images/headset.jpg" alt="" class="img" id="img3">
+                <a href="#slider-span3" class="button" id="button-3"></a>
+            </div>
+            <div class="slides-div" id="slide-4">
+                <img src="images/headset.jpg" alt="" class="img" id="img4">
+                <a href="#slider-span4" class="button" id="button-4"></a>
+            </div>
+            <div class="slides-div" id="slide-5">
+                <img src="images/headset.jpg" alt="" class="img" id="img5">
+                <a href="#slider-span5" class="button" id="button-5"></a>
+            </div>
+        </div>
     </div>
-
     <div id="footer">
-        <p>Created by Akshat and Debangan</p><a href="#">More About Us</a>
+        <p>Created by Akshat and Debangan</p><a href="../abt/about_page.html">More About Us</a>
     </div>
-
 </body>
 
 </html>
