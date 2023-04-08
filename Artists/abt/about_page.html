@@ -17,15 +17,13 @@
             height: 100vh;
             width: 100vw;
             display: flex;
-            background-image: url("/abt/bg.png");
+            background-image: url("bg.png");
             background-size: cover;
             background-attachment: fixed;
             justify-content: space-between;
             flex-direction: column;
         }
-        html::-webkit-scrollbar{
-            display: none;
-        }
+
 
         #mainnavcont {
             position: sticky;
@@ -151,7 +149,7 @@
             backface-visibility: hidden;
         }
         .front{
-            background-image: url("/abt/img.jpeg");
+            background-image: url("img.jpeg");
             background-position: center center;
             background-size: contain;
         }
@@ -173,7 +171,7 @@
             margin: 1vh;
         }
         .c2{
-            background-image: url("/abt/img2.jg");
+            background-image: url("img2.jg");
         }
         #creators{
             margin-top: 15vh;
@@ -183,7 +181,7 @@
             display: flex;
         }
         #abttext{
-            height: 25vh;
+            height: 12vh;
             width: 40vw;
             background-color: white;
             margin-top: 2vh;
@@ -203,9 +201,9 @@
         <div id="mainnav">
             <div id="logo">TuneTrance</div>
             <ul id="subnav">
-                <li><a href="/home.html" class="navlink" id="hometext">HOME</a></li>
-                <li><a href="#" class="navlink" id="artisttext">ARTISTS</a></li>
-                <li><a href="#" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="../home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
             </ul>
         </div>
     </div>
@@ -223,7 +221,7 @@
             </div>
             <div class="container">
                 <div class="creator">
-                    <div class="front" style="background-image: url(/abt/img2.jpeg);"></div>
+                    <div class="front" style="background-image: url('img2.jpeg');"></div>
                     <div class="back" style="background-color: black;">
                         <p>Akshat Shah</p>
                         <p>akshat.shah@research.iiit.ac.in</p>
