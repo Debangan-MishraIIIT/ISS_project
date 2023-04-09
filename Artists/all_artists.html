@@ -1,18 +1,9 @@
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider Sandbox</title>
     <style>
-        body {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
 
         .slide-container {
             width: 100%;
@@ -42,83 +33,81 @@
 
         .img {
             position: relative;
-            width: 25vh;
-            height: 25vh;
+            width: 10em;
+            height: 10em;
             transition: 0.5s;
         }
 
-        .button {
-            position: absolute;
-            width: 25vh;
-            height: 25vh;
-            transition: 0.5s;
-            background-color: rgba(67, 67, 151, 0.2);
-        }
-
-        #slider-span1:target~.image-slider #img1,
-        #slider-span1:target~.image-slider #button-1 {
+        .img:hover {
             width: 35vh;
             height: 35vh;
             background-color: transparent;
         }
 
-        #slider-span2:target~.image-slider #img2,
-        #slider-span2:target~.image-slider #button-2 {
+        #slider-span1:hover~.image-slider #img1,
+        #slider-span1:hover~.image-slider #button-1 {
             width: 35vh;
             height: 35vh;
             background-color: transparent;
         }
 
-        #slider-span3:target~.image-slider #img3,
-        #slider-span3:target~.image-slider #button-3 {
+        #slider-span2:hover~.image-slider #img2,
+        #slider-span2:hover~.image-slider #button-2 {
             width: 35vh;
             height: 35vh;
             background-color: transparent;
         }
 
-        #slider-span4:target~.image-slider #img4,
-        #slider-span4:target~.image-slider #button-4 {
+        #slider-span3:hover~.image-slider #img3,
+        #slider-span3:hover~.image-slider #button-3 {
             width: 35vh;
             height: 35vh;
             background-color: transparent;
         }
 
-        #slider-span5:target~.image-slider #img5,
-        #slider-span5:target~.image-slider #button-5 {
+        #slider-span4:hover~.image-slider #img4,
+        #slider-span4:hover~.image-slider #button-4 {
             width: 35vh;
             height: 35vh;
             background-color: transparent;
         }
 
-        #slider-span4:target~.image-slider {
+        #slider-span5:hover~.image-slider #img5,
+        #slider-span5:hover~.image-slider #button-5 {
+            width: 35vh;
+            height: 35vh;
+            background-color: transparent;
+        }
+
+        #slider-span4:hover~.image-slider {
             left: -40%;
         }
 
-        #slider-span5:target~.image-slider {
+        #slider-span5:hover~.image-slider {
             left: -60%;
         }
 
-        #slider-span1:target~.image-slider {
+        #slider-span1:hover~.image-slider {
             left: 20%;
         }
 
-        #slider-span2:target~.image-slider {
+        #slider-span2:hover~.image-slider {
             left: 0%;
         }
 
-        #slider-span3:target~.image-slider {
+        #slider-span3:hover~.image-slider {
             left: -20%;
         }
+
         @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
 
         body {
             margin: 0;
             padding: 0;
             max-width: 100%;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            display:flex;
-            justify-content:space-between;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
             flex-direction: column;
             height: 100vh;
             width: 100vw;
@@ -130,13 +119,16 @@
             top: 0;
             z-index: 10;
         }
-        #artisttext{
-            color:rgb(182, 181, 181);
+
+        #artisttext {
+            color: rgb(182, 181, 181);
         }
-        #artisttext::after{
+
+        #artisttext::after {
             width: 100%;
-            background-color:rgb(182, 181, 181);
+            background-color: rgb(182, 181, 181);
         }
+
         #mainnav {
             display: flex;
             flex-direction: column;
@@ -169,7 +161,7 @@
             text-decoration: none;
             color: white;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                        font-size: large;
+            font-size: large;
             font-weight: 500;
         }
 
@@ -186,6 +178,7 @@
         .navlink:hover::after {
             width: 100%;
         }
+
         .c1 {
             height: 70vh;
             width: 95vw;
