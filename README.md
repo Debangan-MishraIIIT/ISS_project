@@ -1,7 +1,6 @@
 # Clueless_Coders
 
 The following is the directory structure:
-This might not render properly, please open in the 'source blob' mode to see the tree properly. Thank You.
 
 ```
 .
