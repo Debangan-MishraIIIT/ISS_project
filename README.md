@@ -1,7 +1,7 @@
 # Clueless_Coders
 
 In order to open the document, you may download the zip file on your machine and open any of the HTML files, which will render the website. You can navigate to any of the pages from there via the links. You may also clone the repository into your machine. 
-Note that all the webpages are in the TuneTrance folder.
+Note that all the webpages are in the TuneTrance folder. There may be a minor font/rendering issue with Linux, so it is best opened in Windows.
 
 The following is the directory structure:
 
