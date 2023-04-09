@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider Sandbox</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
 
         .slide-container {
             width: 100%;
@@ -11,6 +12,7 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+            margin-top: -3vh;
         }
 
         .image-slider {
@@ -33,9 +35,10 @@
 
         .img {
             position: relative;
-            width: 10em;
-            height: 10em;
+            width: 12vw;
+            height: 12vw;
             transition: 0.5s;
+            border-radius: 1vh;
         }
 
         .img:hover {
@@ -99,7 +102,6 @@
             left: -20%;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
 
         body {
             margin: 0;
@@ -111,7 +113,24 @@
             flex-direction: column;
             height: 100vh;
             width: 100vw;
-        }
+            background: linear-gradient(-45deg,  #23d579,#7323d5, #e73c7e, #ee7752);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+        
+        @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
         #mainnavcont {
             width: 100%;
@@ -207,6 +226,13 @@
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             padding-left: 35vw;
         }
+        .title{
+            font-family: 'Delicious Handrawn', cursive;
+            justify-content: center;
+            text-align: center;
+            font-size: 12vh;
+            margin-top: 10vh;
+        }
     </style>
 </head>
 
@@ -221,6 +247,10 @@
             </ul>
         </div>
     </div>
+    <div class="title">
+        Featured Artists
+
+    </div>
 
     <div class="slide-container">
         <span class="slider-span" id="slider-span1"></span>
@@ -230,26 +260,37 @@
         <span class="slider-span" id="slider-span5"></span>
 
         <div class="image-slider">
+            <a href="./IU/artist.html">
             <div class="slides-div" id="slide-1">
-                <img src="images/headset.jpg" alt="" class="img" id="img1">
-                <a href="#slider-span1" class="button" id="button-1"></a>
+                <img src="./IU/profile_artistpage.png" alt="" class="img" id="img1">
+                
             </div>
+            
+            </a>
+            <a href="./BTS/artist.html">
             <div class="slides-div" id="slide-2">
-                <img src="images/headset.jpg" alt="" class="img" id="img2">
-                <a href="#slider-span2" class="button" id="button-2"></a>
+                <img src="./BTS/profile_artistpage.png" alt="" class="img" id="img2">
+                
             </div>
+            </a>
+            <a href="./Weeknd/artist.html">
             <div class="slides-div" id="slide-3">
-                <img src="images/headset.jpg" alt="" class="img" id="img3">
-                <a href="#slider-span3" class="button" id="button-3"></a>
+                <img src="./Weeknd/profile_artistpage.png" alt="" class="img" id="img3">
+                
             </div>
+            </a>
+            <a href="./Taylor_Swift/artist.html">
             <div class="slides-div" id="slide-4">
-                <img src="images/headset.jpg" alt="" class="img" id="img4">
-                <a href="#slider-span4" class="button" id="button-4"></a>
+                <img src="./Taylor_Swift/profile_artistpage.png" alt="" class="img" id="img4">
+               
             </div>
+            </a>
+            <a href="./Drake/artist.html">
             <div class="slides-div" id="slide-5">
-                <img src="images/headset.jpg" alt="" class="img" id="img5">
-                <a href="#slider-span5" class="button" id="button-5"></a>
+                <img src="./Drake/drake_artistpage.png" alt="" class="img" id="img5">
+
             </div>
+            </a>
         </div>
     </div>
     <div id="footer">
