@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('background.png');
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100vw;
+        }
+
+        #mainnavcont {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            width: 100vw;
+        }
+
+        #mainnav {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            margin: 0;
+            padding: 1vh;
+            z-index: 10;
+        }
+
+        #logo {
+            color: white;
+            font-size: 2.5rem;
+            font-family: 'Delicious Handrawn', cursive;
+            font-weight: bold;
+            padding: 1vh 0 2vh 0;
+            display: flex;
+            justify-content: center;
+            transform: translateX(0.75vw);
+            align-items: center;
+
+        }
+
+        #subnav {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+
+        #footer {
+            background-color: black;
+            height: 7vh;
+            width: 100vw;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-left: 35vw;
+        }
+
+        #mainbod {
+            height: 85vh;
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navlink {
+            text-decoration: none;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: large;
+            font-weight: 500;
+        }
+
+        .navlink::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: rgb(242, 136, 187);
+            width: 0%;
+            transition: 0.68s;
+            margin: 0px auto;
+        }
+
+        .navlink:hover::after {
+            width: 100%;
+        }
+
+        #imgcont {
+            height: max-content;
+            width: max-content;
+            position: relative;
+        }
+
+        #favimg {
+            margin-top: 20vh;
+            height: 35vh;
+            width: 30vw;
+            background-image: url("/img.jpg");
+            background-position: -20vh center;
+            background-size: 43vw 45vh;
+            transition: 1s;
+            border-radius: 2vh 2vh 0 0;
+        }
+
+        #zoombutton {
+            position: absolute;
+            right: 0;
+            z-index: 5;
+            display: none;
+        }
+
+        #wrapper {
+            display: inline-block;
+            background-size: cover;
+            background-image: url("/magnifying-glass.svg");
+            height: 5.5vh;
+            width: 5.5vh;
+            z-index: 100;
+            position: absolute;
+            right: 1vh;
+            top: 1vh;
+        }
+
+        .star {
+            display: none;
+        }
+
+        .star+label:before {
+            content: '\f005';
+            font-family: FontAwesome;
+            display: inline-block;
+            font-size: 1.2em;
+            color: #ccc;
+            transition: color 0.5s;
+        }
+
+        .star:checked+label:before {
+            color: black;
+        }
+
+        #reviews {
+            position: absolute;
+            top: 20vh;
+            right: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #timermain {
+            display: flex;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            font-weight: 100;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #card {
+            position: fixed;
+            top: 5vh;
+            left: 50vw;
+            transform: translateX(-50%);
+        }
+
+        #timer div {
+            background-color: #e4e4e4;
+            padding: 1vh;
+            border-radius: 2vh;
+            width: 14vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1vh;
+        }
+
+        #revbod {
+            background-color: #e4e4e4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 30vw;
+            height: min-content;
+            margin: 1.5vh;
+            border-radius: 2vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #list_of_reviews {
+            list-style: none;
+        }
+
+        #review {
+            margin: 1vh 0 1vh 1vh;
+            width: 75%;
+            overflow-wrap: break-word;
+        }
+
+        #rating {
+            background-color: #888;
+            width: 30vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 9vh;
+            margin-bottom: 2vh;
+            border-radius: 0 0 2vh 2vh;
+        }
+
+        #rating2 {
+            margin: 0 1vh 0 1vh;
+        }
+
+        #textcont {
+            height: 4.5vh;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid #888;
+            resize: none;
+            width: 20vw;
+            margin-left: 1.1vw;
+            border-radius: 1vh;
+        }
+
+        #textcont:focus {
+            outline: none;
+            border: solid 1px #888;
+        }
+
+        #submit {
+            outline: none;
+            border: solid white 0.5px;
+            border-radius: 2vh;
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #subrating {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 60%;
+            margin-right: 1.1vw;
+        }
+
+        #starvals {
+            display: flex;
+        }
+
+        #album_timer {
+            margin-left: 2vw;
+            position: relative;
+            background-color: #888;
+            height: 14vh;
+            width: 16vw;
+            flex-direction: column;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 2vh;
+            position: fixed;
+            top: 25vh;
+            left: 2vw;
+        }
+
+        #typewriter {
+            margin-left: 2vw;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainnavcont">
+        <div id="mainnav">
+            <div id="logo">TuneTrance</div>
+            <ul id="subnav">
+                <li><a href="../home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mainbod">
+        <div id="album_timer">
+            <div id="typewriter"></div>
+            <div id="timermain">
+                <div id="timer"></div>
+            </div>
+        </div>
+
+        <div id="card">
+            <div id="imgcont">
+                <div id="favimg">
+                    <input type="checkbox" id="zoombutton" onclick="f1()" placeholder="Click">
+                    <label for="zoombutton" id="wrapper"></label>
+                </div>
+            </div>
+
+            <div id="rating">
+                <textarea id="textcont" placeholder="Enter your review"></textarea>
+                <div id="subrating">
+                    <div id="starvals">
+                        <input type="radio" id="star1" class="star" onclick="f2(1)">
+                        <label for="star1"></label>
+                        <input type="radio" id="star2" class="star" onclick="f2(2)">
+                        <label for="star2"></label>
+                        <input type="radio" id="star3" class="star" onclick="f2(3)">
+                        <label for="star3"></label>
+                        <input type="radio" id="star4" class="star" onclick="f2(4)">
+                        <label for="star4"></label>
+                        <input type="radio" id="star5" class="star" onclick="f2(5)">
+                        <label for="star5"></label>
+                    </div>
+                    <button id="submit" onclick="f3()">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="reviews">
+            <ul id="list_of_reviews">
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p>Created by Akshat and Debangan</p><a href="../abt/about_page.html">More About Us</a>
+    </div>
+
+    <script>
+        const phrase = "Next album in:";
+        let index = 0;
+        let delay = 2000; // 2 seconds delay between cycles
+        let typingSpeed = 150; // 100 milliseconds delay between each character
+
+        function type() {
+            setInterval(function () {
+                document.getElementById("typewriter").textContent = phrase.substring(0, index);
+                index++;
+
+                if (index > phrase.length) {
+                    setTimeout(function () {
+                        index = 0;
+                    }, delay);
+                }
+            }, typingSpeed);
+        }
+
+        type();
+
+        function f1() {
+            img = document.getElementById("favimg")
+            button = document.getElementById("zoombutton");
+            if (button.checked) {
+                img.style.backgroundSize = '53vw 55.5vh';
+            } else {
+                img.style.backgroundSize = '43vw 45vh';
+            }
+        }
+        function f2(count) {
+            starlist = document.querySelectorAll(".star");
+            for (let i = 0; i < 5; i++) {
+                starlist[i].checked = false;
+            }
+            for (let i = 0; i < count; i++) {
+                starlist[i].checked = true;
+            }
+        }
+
+        dictarr = [];
+
+        function f3() {
+            review = document.getElementById("textcont");
+            starlen = document.querySelectorAll('.star:checked').length;
+            dict = {
+                reviewval: review,
+                len: starlen
+            }
+            appendElement(dict['reviewval'].value, dict['len']);
+            dictarr.push(dict);
+            review.value = "";
+            starlist = document.querySelectorAll(".star");
+            for (let i = 0; i < 5; i++) {
+                starlist[i].checked = false;
+            }
+        }
+
+        function appendElement(text, rating) {
+            const ul = document.getElementById("list_of_reviews")
+            var newElement = document.createElement("li");
+            text2 = "";
+            for (let i = 1; i <= rating; i++) {
+                text2 += "&#9733";
+            }
+            newElement.innerHTML =
+                '<div id="revbod">' + '<div id="review">' + text + '</div>' + '<div id="rating2">' + text2 + '</div>' + '</div>';
+            ul.appendChild(newElement);
+        }
+
+        function updatetimer() {
+            now = new Date();
+            target = Date.parse("30 June, 2023")
+            diff = target - now;
+            days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hours = Math.floor(diff / (1000 * 60 * 60));
+            mins = Math.floor(diff / (1000 * 60));
+            secs = Math.floor(diff / 1000);
+            d = days;
+            h = hours - days * 24;
+            m = mins - hours * 60;
+            s = secs - mins * 60;
+            document.getElementById("timer").innerHTML =
+                '<div>' + d + ' : ' + h + ' : ' + m + ' : ' + s + '</div>';
+        }
+        setInterval(updatetimer, 1000);
+
+    </script>
+</body>
+
+</html>
