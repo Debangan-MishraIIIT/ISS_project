@@ -105,13 +105,9 @@
             display: block;
             height: 3px;
             background-color: rgb(242, 136, 187);
-            width: 0%;
+            width: var(--width, 0%);
             transition: 0.68s;
             margin: 0px auto;
-        }
-
-        .navlink:hover::after {
-            width: 100%;
         }
 
         #imgcont {
@@ -124,7 +120,7 @@
             margin-top: 20vh;
             height: 35vh;
             width: 30vw;
-            background-image: url("/img.jpg");
+            background-image: url("../img.jpg");
             background-position: -20vh center;
             background-size: 43vw 45vh;
             transition: 1s;
@@ -141,7 +137,7 @@
         #wrapper {
             display: inline-block;
             background-size: cover;
-            background-image: url("/magnifying-glass.svg");
+            background-image: url("../magnifying-glass.svg");
             height: 5.5vh;
             width: 5.5vh;
             z-index: 100;
@@ -279,7 +275,6 @@
 
         #album_timer {
             margin-left: 2vw;
-            position: relative;
             background-color: #888;
             height: 14vh;
             width: 16vw;
@@ -298,6 +293,27 @@
             font-size: 1.5em;
             font-weight: 700;
         }
+
+        #info {
+            position: fixed;
+            bottom: 15vh;
+            left: 2vw;
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 2vh;
+        }
+
+        #textinfo {
+            padding: 2vh;
+        }
+
+        #spottext{
+            color:rgb(182, 181, 181);
+        }
+        #spottext::after{
+            width: 100%;
+            background-color:rgb(182, 181, 181);
+        }
     </style>
 </head>
 
@@ -309,6 +325,8 @@
                 <li><a href="../home.html" class="navlink" id="hometext">HOME</a></li>
                 <li><a href="../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
                 <li><a href="../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="../search.html" class="navlink" id="searchtext">SEARCH</a></li>
+                <li><a href="#" class="navlink" id="spottext">SPOTLIGHT</a></li>
             </ul>
         </div>
     </div>
@@ -319,6 +337,20 @@
             <div id="timermain">
                 <div id="timer"></div>
             </div>
+        </div>
+        <div id="info">
+            <p id="textinfo">
+                Our favourite artist is &nbsp; <b style="font-size: 1.25em;">Taylor Swift!!!</b> &nbsp; She is a<br>
+                popular American singer and songwriter. <br>
+                Her genre-spanning discography, songwriting, <br>
+                and artistic reinventions have received <br>
+                critical praise and wide media coverage. <br>
+                Born in West Reading, Pennsylvania, Swift moved <br>
+                to Nashville at age 14 to become a country artist. <br>
+                She signed a songwriting deal with <br>
+                Sony/ATV Music Publishing in 2004 and a <br>
+                recording contract with Big Machine Records in 2005. <br>
+            </p>
         </div>
 
         <div id="card">
@@ -380,6 +412,17 @@
         }
 
         type();
+
+        const navLinks = document.querySelectorAll('.navlink');
+
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        });
 
         function f1() {
             img = document.getElementById("favimg")
