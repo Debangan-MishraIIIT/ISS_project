@@ -189,13 +189,9 @@
             display: block;
             height: 3px;
             background-color: rgb(242, 136, 187);
-            width: 0%;
+            width: var(--width, 0%);
             transition: 0.68s;
             margin: 0px auto;
-        }
-
-        .navlink:hover::after {
-            width: 100%;
         }
 
         .c1 {
@@ -244,6 +240,8 @@
                 <li><a href="./home.html" class="navlink" id="hometext">HOME</a></li>
                 <li><a href="./all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
                 <li><a href="./abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+		<li><a href="../search.html" class="navlink" id="searchtext">SEARCH</a></li>
+                <li><a href="../favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
             </ul>
         </div>
     </div>
@@ -296,6 +294,20 @@
     <div id="footer">
         <p>Created by Akshat and Debangan</p><a href="../abt/about_page.html">More About Us</a>
     </div>
+	
+<script>
+const navLinks = document.querySelectorAll('.navlink');
+
+navLinks.forEach(navLink => {
+    navLink.addEventListener('mouseover', () => {
+        navLink.style.setProperty('--width', '100%');
+    });
+    navLink.addEventListener('mouseout', () => {
+        navLink.style.setProperty('--width', '0%');
+    });
+}); 
+</script>
+	
 </body>
 
 </html>
