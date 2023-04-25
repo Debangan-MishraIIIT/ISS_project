@@ -50,7 +50,7 @@
             text-decoration: none;
             color: white;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                        font-size: large;
+            font-size: large;
             font-weight: 500;
         }
 
@@ -59,13 +59,9 @@
             display: block;
             height: 3px;
             background-color: rgb(242, 136, 187);
-            width: 0%;
+            width:var(--width, 0%);
             transition: 0.68s;
             margin: 0px auto;
-        }
-
-        .navlink:hover::after {
-            width: 100%;
         }
 
         body {
@@ -188,11 +184,13 @@
         #songhover:hover .hovitem {
             opacity: 1;
         }
-        .imgtext{
+
+        .imgtext {
             text-decoration: none;
             color: white;
             font-family: 'Manrope', sans-serif;
         }
+
         #imgnav {
             position: absolute;
             top: 45vh;
@@ -206,9 +204,11 @@
         <div id="mainnav">
             <div id="logo">TuneTrance</div>
             <ul id="subnav">
-               <li><a href="../../../home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="../../../home.html" class="navlink" id="hometext">HOME</a></li>
                 <li><a href="../../../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
                 <li><a href="../../../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="../../../search.html" class="navlink" id="searchtext">SEARCH</a></li>
+                <li><a href="../../../favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
             </ul>
         </div>
     </div>
@@ -216,8 +216,9 @@
         <img src="../../drake_profile_picture.png" id="navimg" usemap="circle" style="margin-left: 35px;">
         <div id="imgnav">
             <div class="hovitem"><a href="../songspage_morelife/songs.html" class="imgtext">More Life</a></div>
-            <div class="hovitem" style="background-color: rgb(112, 112, 112);"><a href="../songspage_sofargone/songs.html" class="imgtext">So Far Gone</a></div>
-            <div class="hovitem" ><a href="../songspage_scorpion/songs.html" class="imgtext">Scorpion</a></div>
+            <div class="hovitem" style="background-color: rgb(112, 112, 112);"><a
+                    href="../songspage_sofargone/songs.html" class="imgtext">So Far Gone</a></div>
+            <div class="hovitem"><a href="../songspage_scorpion/songs.html" class="imgtext">Scorpion</a></div>
             <div class="hovitem"><a href="../songspage_takecare/songs.html" class="imgtext">Take Care</a></div>
             <div class="hovitem"><a href="../songspage_views/songs.html" class="imgtext">Views</a></div>
         </div>
@@ -253,6 +254,20 @@
     <div id="footer">
         <p>Created by Akshat and Debangan</p><a href="../../../abt/about_page.html">More About Us</a>
     </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.navlink');
+
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        }); 
+    </script>
+
 </body>
 
 </html>
