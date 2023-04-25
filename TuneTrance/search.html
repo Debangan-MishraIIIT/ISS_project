@@ -136,7 +136,7 @@
     }
 
     .results:last-child {
-      margin-bottom: 7vh;
+      margin-bottom: 10vh;
     }
 
     .result {
@@ -202,6 +202,10 @@
 
     .fa-pause {
       font-size: 2.5em;
+    }
+    .NoResults{
+      font-family:'Impact', sans-serif; 
+      font-size: large;
     }
 
     #mainbod {
@@ -273,11 +277,11 @@
     }
 
     input:checked+.slider {
-      background-color: rgb(40, 39, 39);
+      background-color: rgb(61, 60, 60);
     }
 
     input:focus+.slider {
-      box-shadow: 0 0 0.833vh rgb(40, 39, 39);
+      box-shadow: 0 0 0.833vh rgb(61, 60, 60);
     }
 
     input:checked+.slider:before {
@@ -291,6 +295,7 @@
       grid-template-columns: auto auto auto auto auto;
       margin-top: 2vh;
       column-gap: 1vh;
+      color: rgb(61, 60, 60);
     }
 
     .filter_text {
@@ -299,7 +304,7 @@
       justify-content: center;
       align-items: center;
       display: flex;
-      color: grey;
+
     }
 
     .play-button {
@@ -307,11 +312,15 @@
     }
 
     #duration_input {
-      width: 6ch;
+      color: rgb(61, 60, 60);
+      width: 5.2ch;
       border-radius: 0.5vh;
       border: none;
-      color: grey;
+      
       font-family: 'Impact', sans-serif;
+    }
+    #duration_input::placeholder{
+      color: grey;
     }
 
     #duration_input:focus {
@@ -365,7 +374,7 @@
         <input type="checkbox" id="duration_check" />
         <span class="slider"></span>
       </label>
-      <input type="type" placeholder="mm:ss" id="duration_input" disabled />
+      <input type="type"  placeholder="mm:ss" id="duration_input" disabled />
     </div>
     <div class="results" id="results"></div>
   </div>
@@ -514,6 +523,13 @@
           });
           i++;
           count++;
+        }
+        if (count==0){
+          const NotFound = document.createElement('div');
+          NotFound.textContent = 'No Results Found';
+          resultsContainer.classList.add('NoResults');
+          resultsContainer.appendChild(NotFound);
+          
         }
 
 
