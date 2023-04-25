@@ -69,13 +69,9 @@
             display: block;
             height: 3px;
             background-color: rgb(242, 136, 187);
-            width: 0%;
+            width: var(--width, 0%);
             transition: 0.68s;
             margin: 0px auto;
-        }
-
-        .navlink:hover::after {
-            width: 100%;
         }
 
         /* Change hometext to any of the other two depending on which page you are on */
@@ -337,6 +333,18 @@
     <div id="footer">
         <p>Created by Akshat and Debangan</p><a href="../abt/about_page.html">More About Us</a>
     </div>
+    <script>
+        const navLinks = document.querySelectorAll('.navlink');
+        
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        }); 
+    </script>
 </body>
 
 </html>

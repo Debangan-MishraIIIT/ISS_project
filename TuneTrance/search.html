@@ -1,515 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script
-      src="https://kit.fontawesome.com/344e53a5e8.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap");
+<head>
+  <script src="https://kit.fontawesome.com/344e53a5e8.js" crossorigin="anonymous"></script>
 
-      body {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        overflow-x: hidden;
-        height: 100vh;
-        width: 100vw;
-        /* overflow-y: hidden; */
-        background: linear-gradient(-45deg, #23d579, #7323d5, #e73c7e, #ee7752);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-      }
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      height: 100vh;
+      width: 100vw;
+      /* overflow-y: hidden; */
+      background: linear-gradient(-45deg, #23d579, #7323d5, #e73c7e, #ee7752);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
       }
 
-      #mainnavcont {
-        position: sticky;
-        top: 0;
-        z-index: 10;
+      50% {
+        background-position: 100% 50%;
       }
 
-      #mainnav {
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        margin: 0;
-        padding: 1vh;
-        z-index: 10;
+      100% {
+        background-position: 0% 50%;
       }
+    }
 
-      #logo {
-        color: white;
-        font-size: 2.5rem;
-        font-family: "Delicious Handrawn", cursive;
-        font-weight: bold;
-        padding: 1vh 0 2vh 0;
-        display: flex;
-        justify-content: center;
-        transform: translateX(0.75vw);
-        align-items: center;
-      }
+    #mainnavcont {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-      #subnav {
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-      }
+    #mainnav {
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      margin: 0;
+      padding: 1vh;
+      z-index: 10;
+    }
 
-      .navlink {
-        text-decoration: none;
-        color: white;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    #logo {
+      color: white;
+      font-size: 2.5rem;
+      font-family: "Delicious Handrawn", cursive;
+      font-weight: bold;
+      padding: 1vh 0 2vh 0;
+      display: flex;
+      justify-content: center;
+      transform: translateX(0.75vw);
+      align-items: center;
+    }
 
-        font-size: large;
-        font-weight: 500;
-      }
+    #subnav {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
 
-      .navlink::after {
-        content: "";
-        display: block;
-        height: 3px;
-        background-color: rgb(242, 136, 187);
-        width: 0%;
-        transition: 0.68s;
-        margin: 0px auto;
-      }
+    .navlink {
+      text-decoration: none;
+      color: white;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 
-      .navlink:hover::after {
-        width: 100%;
-      }
-      #search-input {
-        height: 5vh;
-        border-radius: 2vh;
-        outline: none;
-        background-color: rgba(255, 255, 255, 0.7);
-        border: none;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        padding-left: 1vw;
-        width: 20vw;
-        vertical-align: middle;
-      }
-      .btn {
-        height: 5.31vh;
-        border-radius: 2vh;
-        width: 5vh;
-        background-color: rgba(255, 255, 255, 0.7);
-        border: none;
+      font-size: large;
+      font-weight: 500;
+    }
 
-        color: grey;
-        vertical-align: middle;
-        margin-left: 0.2vh;
-        justify-content: space-around;
-        /* background-image: url('search_glass.png');
+    .navlink::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background-color: rgb(242, 136, 187);
+      width: var(--width, 0%);
+      transition: 0.68s;
+      margin: 0px auto;
+    }
+
+    #search-input {
+      height: 5vh;
+      border-radius: 2vh;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      padding-left: 1vw;
+      width: 20vw;
+      vertical-align: middle;
+    }
+
+    .btn {
+      height: 5.31vh;
+      border-radius: 2vh;
+      width: 5vh;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+
+      color: grey;
+      vertical-align: middle;
+      margin-left: 0.2vh;
+      justify-content: space-around;
+      /* background-image: url('search_glass.png');
             background-size: cover; */
-      }
-
-      #search-input:focus + .btn {
-        color: black;
-      }
-      #search-input::placeholder {
-        color: gray;
-      }
-
-      .results {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 3vh;
-
-      }
-      .results:last-child{
-        margin-bottom: 7vh;
-      }
-      .result {
-        display: grid;
-
-        align-content: center;
-        width: 65vh;
-        height: 8vh;
-        border-radius: 2vh;
-        margin: 1vh;
-        padding: 3vh;
-        grid-template-rows: 6vh 4vh;
-        grid-template-columns: 10vh auto 5vh;
-
-        background-color: rgba(137, 137, 137, 0.7);
-      }
-
-      .artwork {
-        grid-area: 1/1/3/2;
-        background-size: cover;
-        border-radius: 0.5vh;
-      }
-      .trackName {
-        margin-top: 1vh;
-        grid-area: 1/2/2/3;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: 3.5vh;
-        margin-left: 1.5vh;
-        overflow: hidden;
-        align-content: center;
-        justify-content: center;
-      }
-      .artistName {
-        grid-area: 2/2/3/3;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        margin-left: 1.5vh;
-        color: rgb(38, 39, 39);
-        font-weight: 100;
-      }
-      .play-button {
-        margin-top: 1vh;
-        grid-area: 1/3/2/4;
-        background: none;
-        border: none;
-      }
-      .songDuration {
-        grid-area: 2/3/3/4;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        /* margin-left: 1vh; */
-        color: rgb(38, 39, 39);
-        font-weight: 100;
-
-        overflow: hidden;
-      }
-      .fa-play {
-        font-size: 2.5em;
-      }
-      .fa-pause {
-        font-size: 2.5em;
-      }
-
-      #mainbod {
-        
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-      }
-
-      #footer {
-        background-color: black;
-        height: 7vh;
-        width: 100vw;
-        position: fixed;
-
-        left: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      }
-
-      #footer a {
-        text-decoration: none;
-        color: white;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        padding-left: 35vw;
-      }
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 5vh;
-        height: 2.833vh;
-      }
-
-      .switch input {
-        display: none;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 2.167vh;
-        width: 2.167vh;
-        left: 0.4vh;
-        bottom: 0.33vh;
-        background-color: white;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-
-      input:checked + .slider {
-        background-color: rgb(40, 39, 39);
-      }
-
-      input:focus + .slider {
-        box-shadow: 0 0 0.833vh rgb(40, 39, 39);
-      }
-
-      input:checked + .slider:before {
-        -webkit-transform: translateX(2.15vh);
-        -ms-transform: translateX(2.15vh);
-        transform: translateX(2.15vh);
-      }
-      .filters {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        margin-top: 2vh;
-        column-gap: 1vh;
-      }
-      .filter_text {
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: medium;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        color: grey;
-      }
-      .play-button{
-        border:none;
-      }
-      #duration_input {
-        width: 6ch;
-        border-radius: 0.5vh;
-        border: none;
-        color: grey;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      }
-      #duration_input:focus {
-        outline: none;
-      }
-
-      #search-input:focus + .filters {
-        color: black;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="mainnavcont">
-      <div id="mainnav">
-        <div id="logo">NoteWeaver</div>
-        <ul id="subnav">
-          <li><a href="#" class="navlink" id="hometext">HOME</a></li>
-          <li><a href="#" class="navlink" id="artisttext">ARTISTS</a></li>
-          <li><a href="#" class="navlink" id="abouttext">ABOUT</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="mainbod">
-        
-      <div class="parent">
-        <input
-          class="input"
-          type="type"
-          placeholder="Search..."
-          id="search-input"
-        />
-
-        <button class="btn" id="search-btn">
-          <div>
-            <i
-              style="margin-top: 1.5vh; -webkit-text-stroke: 0.8px"
-              class="fas fa-magnifying-glass fa-fw"
-              id="glass"
-            ></i>
-          </div>
-
-           
-        </button>
-      </div>
-
-      <div class="filters">
-        <div class="filter_text">Hide Explicit</div>
-        <label class="switch">
-          <input type="checkbox" id="explicit_check" />
-          <span class="slider"></span>
-        </label>
-
-        <div class="filter_text">Max Duration</div>
-
-        <label class="switch">
-          <input type="checkbox" id="duration_check" />
-          <span class="slider"></span>
-        </label>
-        <input type="type" placeholder="mm:ss" id="duration_input" disabled />
-      </div>
-      <div class="results" id="results"></div>
-    </div>
-
-    <div id="footer">
-      <p>Created by Akshat and Debangan</p>
-      <a href="#">More About Us</a>
-    </div>
-  </body>
-  <script>
-        function convertToMilliseconds(timeString) {
-      var timeParts = timeString.split(":");
-      var minutes = parseInt(timeParts[0]);
-      var seconds = parseInt(timeParts[1]);
-      var totalMilliseconds = (minutes * 60 + seconds) * 1000;
-      return totalMilliseconds;
     }
 
-    function formatTime(milliseconds) {
-      const totalSeconds = Math.floor(milliseconds / 1000);
-      const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
-      const seconds = (totalSeconds % 60).toString().padStart(2, '0');
-      return `${minutes}:${seconds}`;
+    #search-input:focus+.btn {
+      color: black;
     }
-           const searchBtn = document.getElementById('search-btn');
-        const searchInput = document.getElementById('search-input');
-        const apiBaseUrl = 'https://itunes.apple.com/search?';
-        const duration_checkbox = document.getElementById("duration_check");
-          const duration_input= document.getElementById("duration_input");
-          duration_checkbox.addEventListener("change", function() {
-            if (duration_checkbox.checked) {
-                duration_input.disabled = false;
-                console.log('duration');
-            } else {
-                duration_input.disabled = true;
+
+    #search-input::placeholder {
+      color: gray;
+    }
+
+    .results {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 3vh;
+
+    }
+
+    .results:last-child {
+      margin-bottom: 7vh;
+    }
+
+    .result {
+      display: grid;
+
+      align-content: center;
+      width: 65vh;
+      height: 8vh;
+      border-radius: 2vh;
+      margin: 1vh;
+      padding: 3vh;
+      grid-template-rows: 6vh 4vh;
+      grid-template-columns: 10vh auto 5vh;
+
+      background-color: rgba(137, 137, 137, 0.7);
+    }
+
+    .artwork {
+      grid-area: 1/1/3/2;
+      background-size: cover;
+      border-radius: 0.5vh;
+    }
+
+    .trackName {
+      margin-top: 1vh;
+      grid-area: 1/2/2/3;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 3.5vh;
+      margin-left: 1.5vh;
+      overflow: hidden;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .artistName {
+      grid-area: 2/2/3/3;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      margin-left: 1.5vh;
+      color: rgb(38, 39, 39);
+      font-weight: 100;
+    }
+
+    .play-button {
+      margin-top: 1vh;
+      grid-area: 1/3/2/4;
+      background: none;
+      border: none;
+    }
+
+    .songDuration {
+      grid-area: 2/3/3/4;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      /* margin-left: 1vh; */
+      color: rgb(38, 39, 39);
+      font-weight: 100;
+
+      overflow: hidden;
+    }
+
+    .fa-play {
+      font-size: 2.5em;
+    }
+
+    .fa-pause {
+      font-size: 2.5em;
+    }
+
+    #mainbod {
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+    #footer {
+      background-color: black;
+      height: 7vh;
+      width: 100vw;
+      position: fixed;
+
+      left: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    }
+
+    #footer a {
+      text-decoration: none;
+      color: white;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      padding-left: 35vw;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 5vh;
+      height: 2.833vh;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 2.167vh;
+      width: 2.167vh;
+      left: 0.4vh;
+      bottom: 0.33vh;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: rgb(40, 39, 39);
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 0.833vh rgb(40, 39, 39);
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(2.15vh);
+      -ms-transform: translateX(2.15vh);
+      transform: translateX(2.15vh);
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      margin-top: 2vh;
+      column-gap: 1vh;
+    }
+
+    .filter_text {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: medium;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      color: grey;
+    }
+
+    .play-button {
+      border: none;
+    }
+
+    #duration_input {
+      width: 6ch;
+      border-radius: 0.5vh;
+      border: none;
+      color: grey;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    }
+
+    #duration_input:focus {
+      outline: none;
+    }
+
+    #search-input:focus+.filters {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainnavcont">
+    <div id="mainnav">
+      <div id="logo">NoteWeaver</div>
+      <ul id="subnav">
+        <li><a href="#" class="navlink" id="hometext">HOME</a></li>
+        <li><a href="#" class="navlink" id="artisttext">ARTISTS</a></li>
+        <li><a href="#" class="navlink" id="abouttext">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mainbod">
+      
+    <div class="parent">
+      <input class="input" type="type" placeholder="Search..." id="search-input" />
+
+      <button class="btn" id="search-btn">
+        <div>
+          <i style="margin-top: 1.5vh; -webkit-text-stroke: 0.8px" class="fas fa-magnifying-glass fa-fw" id="glass"></i>
+        </div>
+
+         
+      </button>
+    </div>
+
+    <div class="filters">
+      <div class="filter_text">Hide Explicit</div>
+      <label class="switch">
+        <input type="checkbox" id="explicit_check" />
+        <span class="slider"></span>
+      </label>
+
+      <div class="filter_text">Max Duration</div>
+
+      <label class="switch">
+        <input type="checkbox" id="duration_check" />
+        <span class="slider"></span>
+      </label>
+      <input type="type" placeholder="mm:ss" id="duration_input" disabled />
+    </div>
+    <div class="results" id="results"></div>
+  </div>
+
+  <div id="footer">
+    <p>Created by Akshat and Debangan</p>
+    <a href="#">More About Us</a>
+  </div>
+</body>
+<script>
+  function convertToMilliseconds(timeString) {
+    var timeParts = timeString.split(":");
+    var minutes = parseInt(timeParts[0]);
+    var seconds = parseInt(timeParts[1]);
+    var totalMilliseconds = (minutes * 60 + seconds) * 1000;
+    return totalMilliseconds;
+  }
+
+  function formatTime(milliseconds) {
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+  }
+  const searchBtn = document.getElementById('search-btn');
+  const searchInput = document.getElementById('search-input');
+  const apiBaseUrl = 'https://itunes.apple.com/search?';
+  const duration_checkbox = document.getElementById("duration_check");
+  const duration_input = document.getElementById("duration_input");
+  duration_checkbox.addEventListener("change", function () {
+    if (duration_checkbox.checked) {
+      duration_input.disabled = false;
+      console.log('duration');
+    } else {
+      duration_input.disabled = true;
+    }
+  });
+
+  // Add an event listener to the search button
+  searchBtn.addEventListener('click', function () {
+    // Get the value of the input field
+
+    const searchQuery = searchInput.value;
+
+
+    const explicit_check = document.getElementById('explicit_check');
+    const duration_check = document.getElementById('duration_check');
+
+    // Construct the URL for the iTunes API search endpoint
+    apiUrl = apiBaseUrl + 'term=' + searchQuery + '&entity=song';
+
+
+    // Send a request to the API using the fetch method
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Use the data to display search results on your page
+        console.log(data);
+        console.log(data.resultCount)
+
+        // Get the results container element
+        const resultsContainer = document.getElementById('results');
+        count = 0;
+        i = 0;
+        // Clear any previous search results
+        resultsContainer.innerHTML = '';
+        results_array = data.results;
+
+        while (count < 10 && i < data.resultCount) {
+          result = results_array[i];
+
+          if (result.trackExplicitness == 'explicit' && explicit_check.checked) {
+            i++;
+            continue;
+          }
+          if (duration_check.checked) {
+
+            max_duration_milliseconds = convertToMilliseconds(duration_input.value)
+
+            if (max_duration_milliseconds < result.trackTimeMillis) {
+              i++;
+              continue;
             }
-            });
-
-        // Add an event listener to the search button
-        searchBtn.addEventListener('click', function() {
-          // Get the value of the input field
-
-          const searchQuery = searchInput.value;
+          }
 
 
-          const explicit_check = document.getElementById('explicit_check');
-          const duration_check = document.getElementById('duration_check');
 
-          // Construct the URL for the iTunes API search endpoint
-           apiUrl = apiBaseUrl + 'term=' + searchQuery +'&entity=song';
+          const resultDiv = document.createElement('div');
+          resultDiv.classList.add('result');
 
+          const trackName = document.createElement('div');
+          trackName.textContent = results_array[i].trackName;
+          trackName.classList.add('trackName');
+          resultDiv.appendChild(trackName);
 
-          // Send a request to the API using the fetch method
-          fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-              // Use the data to display search results on your page
-              console.log(data);
-              console.log(data.resultCount)
+          const artistName = document.createElement('div');
+          artistName.textContent = result.artistName;
+          artistName.classList.add('artistName');
+          resultDiv.appendChild(artistName);
 
-              // Get the results container element
-              const resultsContainer = document.getElementById('results');
-              count=0;
-              i=0;
-              // Clear any previous search results
-              resultsContainer.innerHTML = '';
-                results_array=data.results;
-
-              while(count<10 && i<data.resultCount){
-                result=results_array[i];
-
-                if(result.trackExplicitness=='explicit'&&explicit_check.checked){
-                    i++;
-                    continue;
-                }
-                if(duration_check.checked){
-                                        
-                    max_duration_milliseconds=convertToMilliseconds(duration_input.value)
-                    
-                    if(max_duration_milliseconds<result.trackTimeMillis){
-                        i++;
-                        continue;
-                    }
-                }
-
-      
-
-                const resultDiv = document.createElement('div');
-                resultDiv.classList.add('result');
-
-                const trackName = document.createElement('div');
-                trackName.textContent =  results_array[i].trackName;
-                trackName.classList.add('trackName');
-                resultDiv.appendChild(trackName);
-
-                const artistName = document.createElement('div');
-                artistName.textContent = result.artistName;
-                artistName.classList.add('artistName');
-                resultDiv.appendChild(artistName);
-
-                const songDuration = document.createElement('div')
-                songDuration.textContent=formatTime(result.trackTimeMillis);
-                songDuration.classList.add('songDuration');
-                resultDiv.appendChild(songDuration);
+          const songDuration = document.createElement('div')
+          songDuration.textContent = formatTime(result.trackTimeMillis);
+          songDuration.classList.add('songDuration');
+          resultDiv.appendChild(songDuration);
 
 
 
 
 
-                const artwork = document.createElement('div');
-                artwork.classList.add('artwork');
-                const imageUrl = result.artworkUrl100;
-                artwork.style.backgroundImage = `url(${imageUrl})`;
-                resultDiv.appendChild(artwork);
+          const artwork = document.createElement('div');
+          artwork.classList.add('artwork');
+          const imageUrl = result.artworkUrl100;
+          artwork.style.backgroundImage = `url(${imageUrl})`;
+          resultDiv.appendChild(artwork);
 
-                const audio = document.createElement('audio');
-                const source = document.createElement('source');
-                const button = document.createElement('button');
-                const buttonIcon = document.createElement('i');
-                audio.classList.add('audio-player');
-                source.src = result.previewUrl;
-                button.classList.add('play-button');
-                buttonIcon.classList.add('fa', 'fa-play');
+          const audio = document.createElement('audio');
+          const source = document.createElement('source');
+          const button = document.createElement('button');
+          const buttonIcon = document.createElement('i');
+          audio.classList.add('audio-player');
+          source.src = result.previewUrl;
+          button.classList.add('play-button');
+          buttonIcon.classList.add('fa', 'fa-play');
 
-                button.appendChild(buttonIcon);
-                audio.appendChild(source);
-                resultDiv.appendChild(button);
-                resultDiv.appendChild(audio);
-                resultsContainer.appendChild(resultDiv);
-                button.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play();
-                    buttonIcon.classList.remove('fa-play');
-                    buttonIcon.classList.add('fa-pause');
-                } else {
-                    audio.pause();
-                    buttonIcon.classList.remove('fa-pause');
-                    buttonIcon.classList.add('fa-play');
-                }
-                });
+          button.appendChild(buttonIcon);
+          audio.appendChild(source);
+          resultDiv.appendChild(button);
+          resultDiv.appendChild(audio);
+          resultsContainer.appendChild(resultDiv);
+          button.addEventListener('click', () => {
+            if (audio.paused) {
+              audio.play();
+              buttonIcon.classList.remove('fa-play');
+              buttonIcon.classList.add('fa-pause');
+            } else {
+              audio.pause();
+              buttonIcon.classList.remove('fa-pause');
+              buttonIcon.classList.add('fa-play');
+            }
+          });
 
-                // add event listener to pause audio when playback ends
-                audio.addEventListener('ended', () => {
-                buttonIcon.classList.remove('fa-pause');
-                buttonIcon.classList.add('fa-play');
-                });
-                i++;
-                count++;
-              }
+          // add event listener to pause audio when playback ends
+          audio.addEventListener('ended', () => {
+            buttonIcon.classList.remove('fa-pause');
+            buttonIcon.classList.add('fa-play');
+          });
+          i++;
+          count++;
+        }
 
 
 
-            });
-        });
-  </script>
+      });
+  });
+
+  const navLinks = document.querySelectorAll('.navlink');
+
+  navLinks.forEach(navLink => {
+    navLink.addEventListener('mouseover', () => {
+      navLink.style.setProperty('--width', '100%');
+    });
+    navLink.addEventListener('mouseout', () => {
+      navLink.style.setProperty('--width', '0%');
+    });
+  }); 
+</script>
+
+
 </html>
