@@ -114,25 +114,23 @@
             flex-direction: column;
             height: 100vh;
             width: 100vw;
-            background: linear-gradient(-45deg, #23d579, #7323d5, #e73c7e, #ee7752);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh;
-        }
-
+            background: linear-gradient(-45deg,  #23d579,#7323d5, #e73c7e, #ee7752);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+        
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 
         #mainnavcont {
@@ -225,8 +223,7 @@
             font-family: 'Impact', sans-serif;
             padding-left: 35vw;
         }
-
-        .title {
+        .title{
             font-family: 'Delicious Handrawn', cursive;
             justify-content: center;
             text-align: center;
@@ -244,7 +241,7 @@
                 <li><a href="./home.html" class="navlink" id="hometext">HOME</a></li>
                 <li><a href="./all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
                 <li><a href="./abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
-                <li><a href="./search.html" class="navlink" id="searchtext">SEARCH</a></li>
+		<li><a href="./search.html" class="navlink" id="searchtext">SEARCH</a></li>
                 <li><a href="./favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
             </ul>
         </div>
@@ -263,55 +260,55 @@
 
         <div class="image-slider">
             <a href="./IU/artist.html">
-                <div class="slides-div" id="slide-1">
-                    <img src="./IU/profile_artistpage.png" alt="" class="img" id="img1">
-
-                </div>
-
+            <div class="slides-div" id="slide-1">
+                <img src="./IU/profile_artistpage.png" alt="" class="img" id="img1">
+                
+            </div>
+            
             </a>
             <a href="./BTS/artist.html">
-                <div class="slides-div" id="slide-2">
-                    <img src="./BTS/profile_artistpage.png" alt="" class="img" id="img2">
-
-                </div>
+            <div class="slides-div" id="slide-2">
+                <img src="./BTS/profile_artistpage.png" alt="" class="img" id="img2">
+                
+            </div>
             </a>
             <a href="./Weeknd/artist.html">
-                <div class="slides-div" id="slide-3">
-                    <img src="./Weeknd/profile_artistpage.png" alt="" class="img" id="img3">
-
-                </div>
+            <div class="slides-div" id="slide-3">
+                <img src="./Weeknd/profile_artistpage.png" alt="" class="img" id="img3">
+                
+            </div>
             </a>
             <a href="./Taylor_Swift/artist.html">
-                <div class="slides-div" id="slide-4">
-                    <img src="./Taylor_Swift/profile_artistpage.png" alt="" class="img" id="img4">
-
-                </div>
+            <div class="slides-div" id="slide-4">
+                <img src="./Taylor_Swift/profile_artistpage.png" alt="" class="img" id="img4">
+               
+            </div>
             </a>
             <a href="./Drake/artist.html">
-                <div class="slides-div" id="slide-5">
-                    <img src="./Drake/drake_artistpage.png" alt="" class="img" id="img5">
+            <div class="slides-div" id="slide-5">
+                <img src="./Drake/drake_artistpage.png" alt="" class="img" id="img5">
 
-                </div>
+            </div>
             </a>
         </div>
     </div>
     <div id="footer">
-        <p>Created by Akshat and Debangan</p><a href="./abt/about_page.html">More About Us</a>
+        <p>Created by Akshat and Debangan</p><a href="../abt/about_page.html">More About Us</a>
     </div>
+	
+<script>
+const navLinks = document.querySelectorAll('.navlink');
 
-    <script>
-        const navLinks = document.querySelectorAll('.navlink');
-
-        navLinks.forEach(navLink => {
-            navLink.addEventListener('mouseover', () => {
-                navLink.style.setProperty('--width', '100%');
-            });
-            navLink.addEventListener('mouseout', () => {
-                navLink.style.setProperty('--width', '0%');
-            });
-        }); 
-    </script>
-
+navLinks.forEach(navLink => {
+    navLink.addEventListener('mouseover', () => {
+        navLink.style.setProperty('--width', '100%');
+    });
+    navLink.addEventListener('mouseout', () => {
+        navLink.style.setProperty('--width', '0%');
+    });
+}); 
+</script>
+	
 </body>
 
 </html>
