@@ -138,13 +138,18 @@
         .sdur {
             font-family: 'Nunito', sans-serif;
             position: absolute;
-            top: 1vh;
-            right: 1vw;
+            
+            right: 4vw;
         }
 
         .sname {
             font-size: 1.6rem;
             font-family: 'Manrope', sans-serif;
+        }
+        .sbutton{
+            
+            position: absolute;
+            right:1vw;
         }
 
         #songbod {
@@ -195,6 +200,13 @@
             top: 45vh;
             left: 1vw;
         }
+        .add-to-playlist-button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: xx-large;
+            
+        }
     </style>
 </head>
 
@@ -226,26 +238,31 @@
             <img src="../Lover/img.png" class="songimg">
             <p class="sname">Lover</p>
             <p class="sdur" style="margin-right: 1vh">3:59</p>
+            <p class="sbutton"><button class="add-to-playlist-button" data-song-id="TS01">+</button></p>
         </div>
         <div class="songs" id="s2">
             <img src="../Lover/img.png" class="songimg">
             <p class="sname">The Archer</p>
             <p class="sdur" style="margin-right: 1vh">3:40</p>
+            <p class="sbutton"><button class="add-to-playlist-button" data-song-id="TS02">+</button></p>
         </div>
         <div class="songs" id="s3">
             <img src="../Lover/img.png" class="songimg">
             <p class="sname">Paper Rings</p>
             <p class="sdur" style="margin-right: 1vh">3:44</p>
+            <p class="sbutton"><button class="add-to-playlist-button" data-song-id="TS03" >+</button></p>
         </div>
         <div class="songs" id="s4">
             <img src="../Lover/img.png" class="songimg">
             <p class="sname">The Man</p>
             <p class="sdur" style="margin-right: 1vh">4:15</p>
+            <p class="sbutton"><button class="add-to-playlist-button" data-song-id="TS04">+</button></p>
         </div>
         <div class="songs" id="s5">
             <img src="../Lover/img.png" class="songimg">
             <p class="sname">Cruel Summer</p>
             <p class="sdur" style="margin-right: 1vh">3:00</p>
+            <p class="sbutton"><button class="add-to-playlist-button" data-song-id="TS05">+</button></p>    
         </div>
     </div>
 
@@ -263,6 +280,31 @@
                 navLink.style.setProperty('--width', '0%');
             });
         }); 
+
+
+    const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-button');
+    addToPlaylistButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const songId = button.dataset.songId;
+        console.log(songId);
+        const formData = new FormData();
+        formData.append('song_id', songId);
+        fetch('http://127.0.0.1:5000/add_to_playlist', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Song added to playlist!');
+            } else {
+                alert('Song already in playlist!');
+            }
+        })
+        .catch(error => console.error(error));
+    });
+});
+
     </script>
 </body>
 
