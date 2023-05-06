@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/impact');
+        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Public+Sans:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Open+Sans:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+        #mainnavcont {
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            z-index: 10;
+        }
+
+        #mainnav {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            margin: 0;
+            padding: 1vh;
+            z-index: 10;
+        }
+
+        #logo {
+            color: white;
+            font-size: 2.5rem;
+            font-family: 'Delicious Handrawn', cursive;
+            font-weight: bold;
+            padding: 1vh 0 2vh 0;
+            display: flex;
+            justify-content: center;
+            transform: translateX(0.75vw);
+            align-items: center;
+
+        }
+
+        #subnav {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+
+        .navlink {
+            text-decoration: none;
+            color: white;
+            font-family: 'Impact', sans-serif;
+            font-size: large;
+            font-weight: 500;
+        }
+
+        .navlink::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: rgb(242, 136, 187);
+            width: var(--width, 0%);
+            transition: 0.68s;
+            margin: 0px auto;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #logo {
+            color: white;
+            font-size: 2.5rem;
+            font-family: 'Delicious Handrawn', cursive;
+            font-weight: bold;
+            padding: 1vh 0 2vh 0;
+            display: flex;
+            justify-content: center;
+            transform: translateX(0.75vw);
+            align-items: center;
+
+        }
+
+        #footer {
+            background-color: black;
+            height: 7vh;
+            width: 100vw;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-family: 'Impact', sans-serif;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Impact', sans-serif;
+            padding-left: 35vw;
+        }
+
+        .playlistitem {
+            border-radius: 5vh;
+            background-color: black;
+            color: white;
+            height: 8vh;
+            width: 40vw;
+            font-size: 2em;
+            margin: 2vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mainbod {
+            margin-top: 15vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            padding-bottom: 10vh;
+        }
+        .text{
+            display: flex;
+            position: relative;
+            width: min-content;
+        }
+        form{
+            height: max-content;
+        }
+        .symbol {
+            height: 1vh;
+            width: 3vh;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            outline: inherit;
+            position: absolute;
+            right: 3vw;
+            top: 45%;
+            margin: 0;
+            padding: 0;
+        }
+        .duritem{
+            color: #e4e4e4;
+            font-size: 0.75em;
+            position: absolute;
+            top: 40%;
+            right: 10vw;
+        }
+        .artisttext{
+            height: 6vh;
+            width: 6vh;
+            position: absolute;
+            left: 6vw;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #taylor{
+            background-image: url("/static/taylor.png");
+            background-size: 6vh, 6vh;
+        }
+        #weeknd{
+            background-image: url("/static/weeknd.png");
+            background-size: 6vh, 6vh;
+        }
+        #iu{
+            background-image: url("/static/iu.png");
+            background-size: 6vh, 6vh;
+        }
+        #bts{
+            background-image: url("/static/bts.png");
+            background-size: 6vh, 6vh;
+        }
+        #drake{
+            background-image: url("/static/drake.png");
+            background-size: 6vh, 6vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainnavcont">
+        <div id="mainnav">
+            <div id="logo">TuneTrance</div>
+            <ul id="subnav">
+                <li><a href="../../home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="../../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="../../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="../../search.html" class="navlink" id="searchtext">SEARCH</a></li>
+                <li><a href="../../favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mainbod">
+        {% for value in val %}
+        <div class="text">
+            {% if value[2]=="Taylor Swift" %}
+            <div class="artisttext" id="taylor"></div>
+            {% elif value[2]=="Weeknd" %}
+            <div class="artisttext" id="weeknd"></div>
+            {% elif value[2]=="IU" %}
+            <div class="artisttext" id="iu"></div>
+            {% elif value[2]=="BTS" %}
+            <div class="artisttext" id="bts"></div>
+            {% elif value[2]=="Drake" %}
+            <div class="artisttext" id="drake"></div>
+            {% endif %}
+            <div class="playlistitem">{{value[0]}} <div class="duritem">{{value[1]}}</div></div>
+            <form action="/delete/{{ value[3] }}" method="POST">
+                <button type="submit" class="symbol"></button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="footer">
+        <p>Created by Akshat and Debangan</p><a href="../../abt/about_page.html">More About Us</a>
+    </div>
+    <script>
+        const navLinks = document.querySelectorAll('.navlink');
+
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        }); 
+    </script>
+</body>
+
+</html>
