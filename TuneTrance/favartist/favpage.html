@@ -25,6 +25,20 @@
             background-attachment: fixed;
             background-size: cover;
             width: 100vw;
+            background: linear-gradient(-45deg, #23d579,#7323d5, #e73c7e, #ee7752 );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+        0%
+         {background-position: 0% 50%;
+	    }
+	    50% {
+		background-position: 100% 50%;
+	    }
+	    100% {
+		background-position: 0% 50%;
+	    }
         }
 
         #mainnavcont {
@@ -118,11 +132,11 @@
 
         #favimg {
             margin-top: 20vh;
-            height: 35vh;
+            height: 51vh;
             width: 30vw;
             background-image: url("./img.jpg");
             background-position: -20vh center;
-            background-size: 43vw 45vh;
+             background-size: 43vw 51vh; 
             transition: 1s;
             border-radius: 2vh 2vh 0 0;
         }
@@ -155,7 +169,7 @@
             font-family: FontAwesome;
             display: inline-block;
             font-size: 1.2em;
-            color: #ccc;
+            color: #6b6767;
             transition: color 0.5s;
         }
 
@@ -165,7 +179,7 @@
 
         #reviews {
             position: absolute;
-            top: 20vh;
+            top: 22vh;
             right: 2vw;
             display: flex;
             justify-content: center;
@@ -179,10 +193,11 @@
         #timer {
             font-size: 1.5em;
             font-weight: 100;
-            font-family: 'Poppins', sans-serif;
+            font-family: helvetica;
         }
 
         #card {
+            height:50vh;
             position: fixed;
             top: 5vh;
             left: 50vw;
@@ -209,7 +224,7 @@
             height: min-content;
             margin: 1.5vh;
             border-radius: 2vh;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, Helvetica, sans-serif
         }
 
         #list_of_reviews {
@@ -223,7 +238,7 @@
         }
 
         #rating {
-            background-color: #888;
+            background-color: #c7c7c7;
             width: 30vw;
             display: flex;
             justify-content: space-between;
@@ -239,7 +254,7 @@
 
         #textcont {
             height: 4.5vh;
-            font-family: 'Poppins', sans-serif;
+            font-family: helvetica;
             border: 1px solid #888;
             resize: none;
             width: 20vw;
@@ -258,7 +273,7 @@
             border-radius: 2vh;
             background-color: black;
             color: white;
-            font-family: 'Poppins', sans-serif;
+            font-family: helvetica;
         }
 
         #subrating {
@@ -274,10 +289,10 @@
         }
 
         #album_timer {
-            margin-left: 2vw;
-            background-color: #888;
+            /* margin-left: 2vw; */
+            background-color: rgb(253, 249, 249);
             height: 14vh;
-            width: 16vw;
+            width: 25vw;
             flex-direction: column;
             display: flex;
             justify-content: space-between;
@@ -285,11 +300,14 @@
             position: fixed;
             top: 25vh;
             left: 2vw;
+            align-items: center;
+            padding: 2vh;
         }
 
         #typewriter {
-            margin-left: 2vw;
-            font-family: 'Poppins', sans-serif;
+            /* margin-left: 2vw; */
+            margin-top: 2vh;
+            font-family: helvetica;
             font-size: 1.5em;
             font-weight: 700;
         }
@@ -299,12 +317,15 @@
             bottom: 15vh;
             left: 2vw;
             background-color: white;
-            font-family: 'Poppins', sans-serif;
+            font-family: helvetica;
             border-radius: 2vh;
         }
 
         #textinfo {
             padding: 2vh;
+            font-family: helvetica;
+            width: 25vw;
+            font-weight: 500;
         }
 
         #spottext{
@@ -327,6 +348,7 @@
                 <li><a href="../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
                 <li><a href="../search.html" class="navlink" id="searchtext">SEARCH</a></li>
                 <li><a href="#" class="navlink" id="spottext">SPOTLIGHT</a></li>
+                <li><a href="http://127.0.0.1:5000/" class="navlink" id="hometext">PLAYLIST</a></li>
             </ul>
         </div>
     </div>
@@ -340,15 +362,14 @@
         </div>
         <div id="info">
             <p id="textinfo">
-                Our favourite artist is &nbsp; <b style="font-size: 1.25em;">Taylor Swift!!!</b> &nbsp; She is a<br>
+                Our favourite artist is  <b style="font-size: 1.5em;">Taylor Swift!!!</b><br>  She is a
                 popular American singer and songwriter. <br>
-                Her genre-spanning discography, songwriting, <br>
-                and artistic reinventions have received <br>
+                Her genre-spanning discography, songwriting, and artistic reinventions have received 
                 critical praise and wide media coverage. <br>
-                Born in West Reading, Pennsylvania, Swift moved <br>
+                Born in West Reading, Pennsylvania, Swift moved 
                 to Nashville at age 14 to become a country artist. <br>
-                She signed a songwriting deal with <br>
-                Sony/ATV Music Publishing in 2004 and a <br>
+                She signed a songwriting deal with 
+                Sony/ATV Music Publishing in 2004 and a 
                 recording contract with Big Machine Records in 2005. <br>
             </p>
         </div>
@@ -428,9 +449,9 @@
             img = document.getElementById("favimg")
             button = document.getElementById("zoombutton");
             if (button.checked) {
-                img.style.backgroundSize = '53vw 55.5vh';
+                img.style.backgroundSize = '53vw 60.5vh';
             } else {
-                img.style.backgroundSize = '43vw 45vh';
+                img.style.backgroundSize = '43vw 51vh';
             }
         }
         function f2(count) {

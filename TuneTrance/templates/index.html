@@ -198,11 +198,12 @@
         <div id="mainnav">
             <div id="logo">TuneTrance</div>
             <ul id="subnav">
-                <li><a href="../../home.html" class="navlink" id="hometext">HOME</a></li>
-                <li><a href="../../all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
-                <li><a href="../../abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
-                <li><a href="../../search.html" class="navlink" id="searchtext">SEARCH</a></li>
-                <li><a href="../../favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
+                <li><a href="http://127.0.0.1:5500/home.html" class="navlink" id="hometext">HOME</a></li>
+                <li><a href="http://127.0.0.1:5500/all_artists.html" class="navlink" id="artisttext">ARTISTS</a></li>
+                <li><a href="http://127.0.0.1:5500/abt/about_page.html" class="navlink" id="abouttext">ABOUT</a></li>
+                <li><a href="http://127.0.0.1:5500/search.html" class="navlink" id="searchtext">SEARCH</a></li>
+                <li><a href="http://127.0.0.1:5500/favartist/favpage.html" class="navlink" id="spottext">SPOTLIGHT</a></li>
+                <li><a href="http://127.0.0.1:5000/" class="navlink" id="spottext">PLAYLIST</a></li>
             </ul>
         </div>
     </div>
@@ -222,7 +223,7 @@
             <div class="artisttext" id="drake"></div>
             {% endif %}
             <div class="playlistitem">{{value[0]}} <div class="duritem">{{value[1]}}</div></div>
-            <form action="/delete/{{ value[3] }}" method="POST">
+            <form action="http://127.0.0.1:5000//delete/{{ value[3] }}" method="POST">
                 <button type="submit" class="symbol"></button>
             </form>
         </div>
@@ -230,7 +231,7 @@
     </div>
 
     <div id="footer">
-        <p>Created by Akshat and Debangan</p><a href="../../abt/about_page.html">More About Us</a>
+        <p>Created by Akshat and Debangan</p><a href="./abt/about_page.html">More About Us</a>
     </div>
     <script>
         const navLinks = document.querySelectorAll('.navlink');
