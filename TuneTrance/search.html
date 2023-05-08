@@ -292,7 +292,7 @@
 
     .filters {
       display: grid;
-      grid-template-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
       margin-top: 2vh;
       column-gap: 1vh;
       color: rgb(61, 60, 60);
@@ -384,7 +384,12 @@
         <span class="slider"></span>
       </label>
       <input type="type"  placeholder="mm:ss" id="duration_input" disabled />
+      <div><button id="reset_filters" style=" font-size:medium; border: none; border-radius: 1vh; height: 3vh; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(61, 60, 60);background-color: rgb(231, 231, 231);">Reset Filters</button></div>
+
+ 
+      </label>
     </div>
+
     <div class="results" id="results"></div>
   </div>
 
@@ -556,6 +561,14 @@
       navLink.style.setProperty('--width', '0%');
     });
   }); 
+  const resetFiltersButton = document.querySelector("#reset_filters");
+resetFiltersButton.addEventListener("click", function () {
+  document.querySelector("#duration_check").checked = false;
+  document.querySelector("#explicit_check").checked = false;
+  document.querySelector("#duration_input").value = "";
+
+});
+
 </script>
 
 </html>
