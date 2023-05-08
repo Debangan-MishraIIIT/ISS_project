@@ -138,8 +138,8 @@
         .sdur {
             font-family: 'Nunito', sans-serif;
             position: absolute;
-            top: 1vh;
-            right: 1vw;
+            
+            right: 4vw;
         }
 
         .sname {
@@ -199,6 +199,13 @@
             position: absolute;
             top: 45vh;
             left: 1vw;
+        }
+        .add-to-playlist-button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: xx-large;
+            
         }
     </style>
 </head>
@@ -261,7 +268,43 @@
     <script>
         const navLinks = document.querySelectorAll('.navlink');
         
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        }); 
 
+
+    const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-button');
+    addToPlaylistButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const songId = button.dataset.songId;
+        console.log(songId);
+        const formData = new FormData();
+        formData.append('song_id', songId);
+        fetch('http://127.0.0.1:5000/add_to_playlist', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('reached')
+            if (data.success) {
+                alert('Song added to playlist!');
+                console.log(data.success)
+            } else {
+                alert('Song already in playlist!');
+                console.log(data.success)
+            }
+        })
+        .catch(error => console.error(error));
+        
+
+    });
+});
         </script>
 </body>
 

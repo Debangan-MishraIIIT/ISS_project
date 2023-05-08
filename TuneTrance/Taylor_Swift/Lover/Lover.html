@@ -208,6 +208,7 @@
             font-size: xx-large;
             
         }
+
     </style>
 </head>
 
@@ -274,7 +275,14 @@
     <script>
         const navLinks = document.querySelectorAll('.navlink');
 
-
+        navLinks.forEach(navLink => {
+            navLink.addEventListener('mouseover', () => {
+                navLink.style.setProperty('--width', '100%');
+            });
+            navLink.addEventListener('mouseout', () => {
+                navLink.style.setProperty('--width', '0%');
+            });
+        }); 
 
 
     const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-button');
@@ -304,6 +312,9 @@
 
     });
 });
+
+
+
 
     </script>
 </body>
