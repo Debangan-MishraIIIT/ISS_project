@@ -152,6 +152,7 @@
             right:1vw;
         }
 
+
         #songbod {
             margin-top: -6vh;
             height: 60vh;
@@ -273,14 +274,7 @@
     <script>
         const navLinks = document.querySelectorAll('.navlink');
 
-        navLinks.forEach(navLink => {
-            navLink.addEventListener('mouseover', () => {
-                navLink.style.setProperty('--width', '100%');
-            });
-            navLink.addEventListener('mouseout', () => {
-                navLink.style.setProperty('--width', '0%');
-            });
-        }); 
+
 
 
     const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-button');
@@ -296,10 +290,13 @@
         })
         .then(response => response.json())
         .then(data => {
+            console.log('reached')
             if (data.success) {
                 alert('Song added to playlist!');
+                console.log(data.success)
             } else {
                 alert('Song already in playlist!');
+                console.log(data.success)
             }
         })
         .catch(error => console.error(error));

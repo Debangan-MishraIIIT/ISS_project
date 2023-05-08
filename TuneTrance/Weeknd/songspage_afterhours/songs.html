@@ -146,6 +146,11 @@
             font-size: 1.6rem;
             font-family: 'Manrope', sans-serif;
         }
+        .sbutton{
+            
+            position: absolute;
+            right:1vw;
+        }
 
         #songbod {
             margin-top: -6vh;
@@ -256,14 +261,7 @@
     <script>
         const navLinks = document.querySelectorAll('.navlink');
 
-        navLinks.forEach(navLink => {
-            navLink.addEventListener('mouseover', () => {
-                navLink.style.setProperty('--width', '100%');
-            });
-            navLink.addEventListener('mouseout', () => {
-                navLink.style.setProperty('--width', '0%');
-            });
-        }); 
+
     </script>
 </body>
 

@@ -1,8 +1,10 @@
 from flask import Flask, render_template, redirect,jsonify,request
 import sqlite3
 
-app = Flask(__name__)
+from flask_cors import CORS
 
+app = Flask(__name__)
+cors = CORS(app)
 def get_items():
     conn = sqlite3.connect("database.db")
     c = conn.cursor()
